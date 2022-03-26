@@ -9,7 +9,9 @@
     "start": "node server.js",
     "build": "node build/build.js",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "capitalize": "^1.0.0",
@@ -69,7 +71,8 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "@snyk/protect": "latest"
   },
   "engines": {
     "node": ">= 8.11.3",
@@ -78,5 +81,6 @@
   "browserslist": [
     "last 2 versions",
     "not ie <= 9"
-  ]
+  ],
+  "snyk": true
 }
